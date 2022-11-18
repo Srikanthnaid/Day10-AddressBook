@@ -97,7 +97,7 @@ public class AddressBook {
 		for (int i = 0; i < contactlist.size(); i++) {
 			String name = contactlist.get(i).getFirstName();
 			if (name.equalsIgnoreCase(deleteName)) {
-				System.out.println("ontact deleting Successfully!");
+				System.out.println("Contact deleting Successfully!");
 				contactlist.remove(i);
 				printContact();
 				deleted = true;
@@ -105,7 +105,7 @@ public class AddressBook {
 			}
 		}
 		if (!deleted) {
-			System.out.println("This name does not exist");
+			System.out.println("Enter name does not exist");
 		}
 	}
 
