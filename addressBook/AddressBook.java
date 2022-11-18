@@ -119,17 +119,32 @@ public class AddressBook {
 	public static void main(String[] args) {
 		AddressBook book = new AddressBook();
 		Scanner userInput = new Scanner(System.in);
+		MultipleAddressBooks obj = new MultipleAddressBooks();
 		while (true) {
-			System.out.println(
-					"Enter 1 to add new contact \nEnter 2 to editContacts  \nEnter 3 to DeleteContact \nEnter 4.to printContact   \nEnter 5 to Exit");
-			int getUserInput = userInput.nextInt();
-			switch (getUserInput) {
-			case 1 -> book.addContacts();
-			case 2 -> book.editContact();
-			case 3 -> book.deleteContact();
-			case 4 -> book.printContact();
-			case 5 -> System.exit(0);
-			default -> System.out.println("invalid input");
+			System.out.println("Enter \n 1. To add The new AddressBook\n 2. To add contact in AddressBook\n "
+					+ "3. To edit the contact in AddressBook\n 4. To delete the contact in AddressBook\n 5. To delete the AddressBook\n "
+					+ "6. To Print the AddressBook\n 7. To Print the contacts in AddressBook\n 0. to exit");
+			Scanner scanner = new Scanner(System.in);
+			int choice = scanner.nextInt();
+			switch (choice) {
+			case 1 -> obj.addAddressBook();
+
+			case 2 -> obj.addContact();
+
+			case 3 -> obj.editContactInBook();
+
+			case 4 -> obj.deleteContactInBook();
+
+			case 5 -> obj.deleteAddressBook();
+
+			case 6 -> obj.printBook();
+
+			case 7 -> obj.printContactsInBook();
+
+			case 0 -> System.exit(0);
+
+			default -> System.out.println("Enter the wrong input");
+
 			}
 		}
 	}
